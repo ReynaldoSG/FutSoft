@@ -34,8 +34,8 @@ public class InsertPartidosModel
     public class GetPartidosModel
     {
         public int Id { get; set; }
-          public int EquipoLocal { get; set; }
-        public int EquipoVisitante { get; set; }
+          public string EquipoLocal { get; set; }
+        public string EquipoVisitante { get; set; }
         public string Estadio { get; set; }
         public string Temporada { get; set; }
         public int MarcadorLocal { get; set; }

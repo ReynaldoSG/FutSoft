@@ -72,8 +72,8 @@ namespace marcatel_api.Services
                         lista.Add(new GetPartidosModel
                         {
                             Id = int.Parse(row["Id"].ToString()),
-                            EquipoLocal = int.Parse(row["EquipoLocal"].ToString()),
-                            EquipoVisitante = int.Parse(row["EquipoVisitante"].ToString()),
+                            EquipoLocal = row["EquipoLocal"].ToString(),
+                            EquipoVisitante =row["EquipoVisitante"].ToString(),
                             Estadio = row["Estadio"].ToString(),
                             Temporada = row["Temporada"].ToString(),
                             MarcadorLocal = int.Parse(row["MarcadorLocal"].ToString()),

@@ -67,7 +67,7 @@ namespace marcatel_api
             services.AddSingleton<LigaService>();
             //services.AddSingleton<NacionalidadesService>();
             services.AddSingleton<PartidosService>();
-            //services.AddSingleton<PosicionesService>();
+            services.AddSingleton<PosicionesService>();
             //services.AddSingleton<StastsJugadorPartService>();
             //services.AddSingleton<StatsEquipoGenService>();
             //services.AddSingleton<StatsEquipoPartService>();
