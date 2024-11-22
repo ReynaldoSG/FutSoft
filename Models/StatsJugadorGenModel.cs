@@ -16,45 +16,17 @@ namespace marcatel_api.Models
     {
         public List<GetSJGModel> data { get; set; }
     }
-
-    public class InsertSJGModel
-    {
-        public string Nombre { get; set; }
-        public int Ubicacion { get; set; }
-        public int UsuarioActualiza { get; set; }
-
-    }
-
-
     public class GetSJGModel
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Ubicacion { get; set; }
-        public string FechaRegistro { get; set; }
-        public string FechaActualiza { get; set; }
-        // public int Estatus { get; set; }
-        public string UsuarioActualiza { get; set; }
+        public string Jugador { get; set; }
+        public string PartidosJugados { get; set; }
+        public string GolesTotales { get; set; }
+        public string AsistenciasTotales { get; set; }
+        public string TarjetasAmarillas { get; set; }
+        public string TarjetasRojas { get; set; }
+        public string MinutosJugados { get; set; }
+        public string Posicion { get; set; }
 
 
     }
-
-
-
-    public class UpdateSJGModel
-    {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public int Ubicacion { get; set; }
-        public int UsuarioActualiza { get; set; }
-
-
-
-    }
-
-    public class DeleteSJGModel
-    {
-        public int Id { get; set; }
-    }
-
 }
