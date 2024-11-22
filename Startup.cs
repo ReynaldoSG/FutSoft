@@ -90,6 +90,10 @@ namespace marcatel_api
             // services.AddSingleton<StatsJugadorGenService>();
             // services.AddSingleton<TemporadasService>();
             // services.AddSingleton<UbicacionService>();
+            services.AddSingleton<StatsEquipoPartService>();
+            services.AddSingleton<StatsJugadorGenService>();
+            services.AddSingleton<TemporadasService>();
+            services.AddSingleton<UbicacionService>();
 
 
 
