@@ -74,6 +74,22 @@ namespace marcatel_api
             //services.AddSingleton<StatsJugadorGenService>();
             //services.AddSingleton<TemporadasService>();
             //services.AddSingleton<UbicacionService>();
+            services.AddSingleton<ArbService>();
+            services.AddSingleton<AsigArbService>();
+            services.AddSingleton<DTService>();
+            services.AddSingleton<EquiposService>();
+            // services.AddSingleton<EstadiosService>();
+            // services.AddSingleton<JugadoresService>();
+            // services.AddSingleton<LigaService>();
+            // services.AddSingleton<NacionalidadesService>();
+            // services.AddSingleton<PartidosService>();
+            // services.AddSingleton<PosicionesService>();
+            // services.AddSingleton<StastsJugadorPartService>();
+            // services.AddSingleton<StatsEquipoGenService>();
+            // services.AddSingleton<StatsEquipoPartService>();
+            // services.AddSingleton<StatsJugadorGenService>();
+            // services.AddSingleton<TemporadasService>();
+            // services.AddSingleton<UbicacionService>();
 
 
 
