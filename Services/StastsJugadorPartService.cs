@@ -17,37 +17,43 @@ namespace marcatel_api.Services
         }
 
 
-/*  public string InsertStatJugPart(InsertStatJugPartModel statJugPart)
-{
-    ArrayList parametros = new ArrayList();
-    ConexionDataAccess dac = new ConexionDataAccess(connection);
-
-    try
-    {
-        // Agregando los parámetros de inserción
-        parametros.Add(new SqlParameter { ParameterName = "@pNombre", SqlDbType = SqlDbType.VarChar, Value = StatJugPart.Nombre });
-        parametros.Add(new SqlParameter { ParameterName = "@pDescripcion", SqlDbType = SqlDbType.VarChar, Value = StatJugPart.Descripcion });
-        parametros.Add(new SqlParameter { ParameterName = "@pUsuarioActualiza", SqlDbType = SqlDbType.Int, Value = StatJugPart.UsuarioActualiza });
-        DataSet ds = dac.Fill("sp_InsertStatJugPart", parametros);
-
-        if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+        public string InsertStatJugPart(InsertStatJugPartModel statJugPart)
         {
-            return ds.Tables[0].Rows[0]["Mensaje"].ToString(); 
-        }
-        else
-        {
-            return "No se recibió ningún mensaje desde la base de datos";
-        }
-    }
-    catch (Exception ex)
-    {
-        Console.Write(ex.Message);
-        return "Error: " + ex.Message;
-    }
+            ArrayList parametros = new ArrayList();
+            ConexionDataAccess dac = new ConexionDataAccess(connection);
 
-    // Retorno por defecto
-    return "Error: Ocurrió un problema al insertar la unidad de medida."; // Valor por defecto en caso de fallo
-} */
+            try
+            {
+                // Agregando los parámetros de inserción
+                parametros.Add(new SqlParameter { ParameterName = "@pJugador", SqlDbType = SqlDbType.Int, Value = statJugPart.Jugador });
+                parametros.Add(new SqlParameter { ParameterName = "@pGoles", SqlDbType = SqlDbType.Int, Value = statJugPart.Goles });
+                parametros.Add(new SqlParameter { ParameterName = "@pAsistencias", SqlDbType = SqlDbType.Int, Value = statJugPart.Asistencias });
+                parametros.Add(new SqlParameter { ParameterName = "@pTAmarilla", SqlDbType = SqlDbType.Int, Value = statJugPart.T_Amarilla });
+                parametros.Add(new SqlParameter { ParameterName = "@pTRoja", SqlDbType = SqlDbType.Int, Value = statJugPart.T_Roja });
+                parametros.Add(new SqlParameter { ParameterName = "@pMinJugados", SqlDbType = SqlDbType.Int, Value = statJugPart.MinJugados });
+                parametros.Add(new SqlParameter { ParameterName = "@pPosicion", SqlDbType = SqlDbType.Int, Value = statJugPart.Posicion });
+                parametros.Add(new SqlParameter { ParameterName = "@pPartido", SqlDbType = SqlDbType.Int, Value = statJugPart.Partido });
+                parametros.Add(new SqlParameter { ParameterName = "@pUsuarioActualiza", SqlDbType = SqlDbType.Int, Value = statJugPart.UsuarioActualiza });
+                DataSet ds = dac.Fill("sp_InsertStatsJugadorPart", parametros);
+
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    return ds.Tables[0].Rows[0]["Mensaje"].ToString(); 
+                }
+                else
+                {
+                    return "No se recibió ningún mensaje desde la base de datos";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return "Error: " + ex.Message;
+            }
+
+            // Retorno por defecto
+            return "Error: Ocurrió un problema al insertar la unidad de medida."; // Valor por defecto en caso de fallo
+        }
 
         public List<GetStatJugPartModel> GetStatJugPart()
         {
@@ -90,21 +96,28 @@ namespace marcatel_api.Services
 
         }
 
-/*         public string UpdateStatJugPart(UpdateStatJugPartModel StatJugPart)
+    public string UpdateStatJugPart(UpdateStatJugPartModel StatJugPart)
+    {
+        ArrayList parametros = new ArrayList();
+        ConexionDataAccess dac = new ConexionDataAccess(connection);
+        var lista = new List<UpdateStatJugPartModel>();
+
+        try
         {
-            ArrayList parametros = new ArrayList();
-            ConexionDataAccess dac = new ConexionDataAccess(connection);
-            var lista = new List<UpdateStatJugPartModel>();
+            parametros.Add(new SqlParameter { ParameterName = "@pId", SqlDbType = SqlDbType.VarChar, Value = StatJugPart.Id });
+            parametros.Add(new SqlParameter { ParameterName = "@pJugador", SqlDbType = SqlDbType.Int, Value = StatJugPart.Jugador });
+            parametros.Add(new SqlParameter { ParameterName = "@pGoles", SqlDbType = SqlDbType.Int, Value = StatJugPart.Goles });
+            parametros.Add(new SqlParameter { ParameterName = "@pAsistencias", SqlDbType = SqlDbType.Int, Value = StatJugPart.Asistencias });
+            parametros.Add(new SqlParameter { ParameterName = "@pTAmarilla", SqlDbType = SqlDbType.Int, Value = StatJugPart.T_Amarilla });
+            parametros.Add(new SqlParameter { ParameterName = "@pTRoja", SqlDbType = SqlDbType.Int, Value = StatJugPart.T_Roja });
+            parametros.Add(new SqlParameter { ParameterName = "@pMinJugados", SqlDbType = SqlDbType.Int, Value = StatJugPart.MinJugados });
+            parametros.Add(new SqlParameter { ParameterName = "@pPosicion", SqlDbType = SqlDbType.Int, Value = StatJugPart.Posicion });
+            parametros.Add(new SqlParameter { ParameterName = "@pPartido", SqlDbType = SqlDbType.Int, Value = StatJugPart.Partido });
+            parametros.Add(new SqlParameter { ParameterName = "@pUsuarioActualiza", SqlDbType = SqlDbType.Int, Value = StatJugPart.UsuarioActualiza });
 
-            try
-            {
-        parametros.Add(new SqlParameter { ParameterName = "@pId", SqlDbType = SqlDbType.VarChar, Value = StatJugPart.Id });
-        parametros.Add(new SqlParameter { ParameterName = "@pNombre", SqlDbType = SqlDbType.VarChar, Value = StatJugPart.Nombre });
-        parametros.Add(new SqlParameter { ParameterName = "@pDescripcion", SqlDbType = SqlDbType.VarChar, Value = StatJugPart.Descripcion });
-        parametros.Add(new SqlParameter { ParameterName = "@pUsuarioActualiza", SqlDbType = SqlDbType.Int, Value = StatJugPart.UsuarioActualiza });
 
 
-                DataSet ds = dac.Fill("sp_UpdateStatJugPart", parametros);
+                DataSet ds = dac.Fill("sp_UpdateStastsJugadorPart", parametros);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     return ds.Tables[0].Rows[0]["Mensaje"].ToString();
@@ -119,14 +132,9 @@ namespace marcatel_api.Services
                 Console.Write(ex.Message);
                 return "Error: " + ex.Message;
             }
-        } */
+    }
 
 
-
-
-          
-
-/* 
         public string DeleteStatJugPart(DeleteStatJugPartModel StatJugPart)
         {
             ArrayList parametros = new ArrayList();
@@ -151,7 +159,7 @@ namespace marcatel_api.Services
                 Console.Write(ex.Message);
                 return "Error: " + ex.Message;
             }
-        } */
+        }
 
 
     }

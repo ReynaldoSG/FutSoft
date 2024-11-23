@@ -34,16 +34,28 @@ namespace marcatel_api.Models
 
    public class InsertStatJugPartModel
    {
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
+        public int Jugador { get; set; }
+        public int Goles { get; set; }
+        public int Asistencias {get;set;}
+        public int T_Amarilla{get;set;}
+        public int T_Roja{get;set;}
+        public int MinJugados{get;set;}
+        public int Posicion{get;set;}
+        public int Partido{get;set;}
         public int UsuarioActualiza { get; set; }
    }
 
    public class UpdateStatJugPartModel
    {
         public int Id {get; set;}
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
+        public int Jugador { get; set; }
+        public int Goles { get; set; }
+        public int Asistencias {get;set;}
+        public int T_Amarilla{get;set;}
+        public int T_Roja{get;set;}
+        public int MinJugados{get;set;}
+        public int Posicion{get;set;}
+        public int Partido{get;set;}
         public int UsuarioActualiza { get; set; }
    }
 
