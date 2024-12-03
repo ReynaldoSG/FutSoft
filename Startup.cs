@@ -72,6 +72,7 @@ namespace marcatel_api
             services.AddSingleton<StatsJugadorGenService>();
             services.AddSingleton<TemporadasService>();
             services.AddSingleton<UbicacionService>();
+            services.AddSingleton<NacionalidadService>();
 
 
 
