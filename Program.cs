@@ -22,7 +22,7 @@ namespace marcatel_api
                 {
                     webBuilder.UseStartup<Startup>();
                     
-                    webBuilder.UseUrls("http://0.0.0.0:5002/");
+                    webBuilder.UseUrls("http://localhost:5001/");
                 });
     }
 }
