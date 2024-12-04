@@ -58,6 +58,7 @@ namespace marcatel_api
             // Get Services LB
 
             services.AddSingleton<UsuariosService>();
+
             services.AddSingleton<ArbService>();
             services.AddSingleton<AsigArbService>();
             services.AddSingleton<DTService>();
@@ -74,6 +75,24 @@ namespace marcatel_api
             // services.AddSingleton<StatsJugadorGenService>();
             // services.AddSingleton<TemporadasService>();
             // services.AddSingleton<UbicacionService>();
+
+            //services.AddSingleton<ArbitrosService>();
+            //services.AddSingleton<Asig_ArbitrosService>();
+            //services.AddSingleton<DirectorTecnicoService>();
+            //services.AddSingleton<EquiposService>();
+            services.AddSingleton<EstadiosService>();
+            services.AddSingleton<JugadoresService>();
+            services.AddSingleton<LigaService>();
+            //services.AddSingleton<NacionalidadesService>();
+            services.AddSingleton<PartidosService>();
+            services.AddSingleton<PosicionesService>();
+            //services.AddSingleton<StastsJugadorPartService>();
+            //services.AddSingleton<StatsEquipoGenService>();
+            //services.AddSingleton<StatsEquipoPartService>();
+            //services.AddSingleton<StatsJugadorGenService>();
+            //services.AddSingleton<TemporadasService>();
+            //services.AddSingleton<UbicacionService>();
+
 
 
 
